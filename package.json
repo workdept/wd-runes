@@ -1,0 +1,8 @@
+{
+	"name": "wd-runes",
+	"version": "0.0.1",
+	"dependencies": {
+		"nconf": "0.5.1",
+    "socket.io": "0.9.6"
+	}
+}
