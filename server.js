@@ -16,12 +16,12 @@ io.sockets.on('connection', function(socket) {
   socket.on('runeflicker', function(index) {
     console.log('rune flickered');
     console.log('index: ' + index);
-    socket.broadcast.emit('runeflicker', index);
+    socket.broadcast.volatile.emit('runeflicker', index);
   });
   socket.on('runechange', function(index, fn) {
     imgs_state[index] = imgs[Math.floor(Math.random() * imgs.length)];
-    socket.broadcast.emit('runechange', {
-      index: index, 
+    socket.broadcast.volatile.emit('runechange', {
+      index: index,
       newrune: imgs_state[index]
     });
     fn(imgs_state[index]);
